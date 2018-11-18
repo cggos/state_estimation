@@ -4,7 +4,13 @@
 
 [TOC]
 
-## Optimization Methods
+# 1. Filters
+
+## Kalman Filter
+
+
+# 2. Optimization
+
 * Gauss Newton
 * Levenberg-Marquadt
 
@@ -20,9 +26,10 @@
 
 ## Bundle Adjustment
 
-## Dataset
-###  BAL Dataset
+# 3. Dataset
+
+##  BAL Dataset
 * [Bundle Adjustment in the Large](http://grail.cs.washington.edu/projects/bal/)
 
-### g2o files
+## g2o files
 * sphere.g2o
