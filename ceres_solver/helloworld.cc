@@ -9,6 +9,7 @@
 #include "ceres/ceres.h"
 #include "glog/logging.h"
 using ceres::AutoDiffCostFunction;
+using ceres::NumericDiffCostFunction;
 using ceres::CostFunction;
 using ceres::Problem;
 using ceres::Solver;
@@ -25,6 +26,14 @@ struct CostFunctor {
   }
 };
 
+// A cost functor that implements the residual r = 10 - x.
+struct CostFunctorNum {
+    bool operator()(const double* const x, double *residual) const {
+      residual[0] = 10.0 - x[0];
+      return true;
+    }
+};
+
 int main(int argc, char** argv) {
   google::InitGoogleLogging(argv[0]);
 
@@ -38,18 +47,22 @@ int main(int argc, char** argv) {
 
   // Set up the only cost function (also known as residual). This uses
   // auto-differentiation to obtain the derivative (jacobian).
-  CostFunction* cost_function =
-      new AutoDiffCostFunction<CostFunctor, 1, 1>(new CostFunctor);
-  problem.AddResidualBlock(cost_function, NULL, &x);
+  CostFunction* cost_function = new AutoDiffCostFunction<CostFunctor, 1, 1>(new CostFunctor);
+
+  // Set up the only cost function (also known as residual). This uses
+  // numeric differentiation to obtain the derivative (jacobian).
+  CostFunction *cost_function_num = new NumericDiffCostFunction<CostFunctorNum, ceres::CENTRAL, 1, 1>(new CostFunctorNum);
+
+  problem.AddResidualBlock(cost_function_num, NULL, &x);
 
   // Run the solver!
   Solver::Options options;
   options.minimizer_progress_to_stdout = true;
   Solver::Summary summary;
   Solve(options, &problem, &summary);
+  
   std::cout << summary.BriefReport() << "\n";
-  std::cout << "x : " << initial_x
-            << " -> " << x << "\n";
+  std::cout << "x : " << initial_x << " -> " << x << "\n";
 
   return 0;
 }
