@@ -4,17 +4,30 @@
 
 [TOC]
 
-# 1. Filters
+# 1. Probability Theory and Statistics
 
-## Kalman Filter
+* MLE (Maximum Likelihood Estimate)
+* OLS (Ordinary Least Squares)
+* RANSAC (RANdom SAmple Consensus)
+* M-Estimator
+
+# 2. Filters
+
+## KF (Kalman Filter)
+
+## EKF (Extended Kalman Filter)
 
 
-# 2. Optimization
+# 3. Optimization
+
+## Methods
 
 * Gauss Newton
 * Levenberg-Marquadt
+* ESM
 
 ## Optimizer
+
 * G2O
 * Ceres
 * iSAM
@@ -30,7 +43,7 @@
 * [Bundle Adjustment in the Large](http://grail.cs.washington.edu/projects/bal/)
 
 
-# 3. Dataset
+# 4. Dataset
 
 ##  BAL Dataset
 
@@ -38,7 +51,7 @@
 * sphere.g2o
 
 
-# 4. Books
+# 5. Books
 
 * ***[Probabilistic Robotics](http://www.probabilistic-robotics.org/)***
   - [pptacher/probabilistic_robotics](https://github.com/pptacher/probabilistic_robotics): solution of exercises of the book "probabilistic robotics"
