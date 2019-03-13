@@ -8,5 +8,5 @@ find_package(Ceres REQUIRED)
 include_directories(${CERES_INCLUDE_DIRS})
 link_libraries(${CERES_LIBRARIES})
 
-add_executable(helloworld helloworld.cc)
-target_link_libraries(helloworld glog)
+add_executable(ceres_demo_01 ceres_demo_01.cc)
+target_link_libraries(ceres_demo_01 glog)

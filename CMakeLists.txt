@@ -10,15 +10,22 @@ set(CMAKE_CXX_STANDARD 11)
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
 find_package(Eigen3 REQUIRED)
-include_directories( ${Eigen3_INCLUDE_DIRS} )
-# include_directories("/opt/eigen-3.3.3/include/eigen3")
+if(Eigen3_FOUND)
+    include_directories( ${Eigen3_INCLUDE_DIRS} )
+endif()
 
 find_package( Sophus REQUIRED )
-include_directories( ${Sophus_INCLUDE_DIRS} )
-link_libraries(Sophus)
+if(Sophus_FOUND)
+    include_directories( ${Sophus_INCLUDE_DIRS} )
+    link_libraries(Sophus)
+endif()
 
-include_directories(/opt/g2o_gx/include/)
-link_directories(/opt/g2o_gx/lib/)
+find_package(G2O REQUIRED)
+if(G2O_FOUND)
+    include_directories(${G2O_INCLUDE_DIRS})
+    link_directories(/opt/g2o/lib)
+endif()
+
 
 add_subdirectory( optimization_basis/gauss_newton )
 add_subdirectory( optimization_basis/g2o_curve_fitting )
@@ -30,3 +37,5 @@ add_subdirectory( bundle_adjustment/ba_g2o )
 add_subdirectory( bundle_adjustment/ba_ceres )
 
 add_subdirectory( pose_graph )
+
+add_subdirectory( ceres_solver )
