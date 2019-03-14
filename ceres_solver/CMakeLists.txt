@@ -15,3 +15,5 @@ add_executable(ceres_demo_01 ceres_demo_01.cc)
 add_executable(ceres_demo_02 ceres_demo_02.cc)
 
 add_executable(ceres_demo_03 ceres_demo_03.cc)
+
+add_executable(ceres_demo_04 ceres_demo_04.cc)
