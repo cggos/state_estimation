@@ -12,7 +12,7 @@ using namespace std;
 using namespace Eigen;
 
 typedef vector<Vector3d, Eigen::aligned_allocator<Vector3d>> VecVector3d;
-typedef vector<Vector2d, Eigen::aligned_allocator<Vector3d>> VecVector2d;
+typedef vector<Vector2d, Eigen::aligned_allocator<Vector2d>> VecVector2d;
 typedef Matrix<double, 6, 1> Vector6d;
 
 int main(int argc, char **argv) {
@@ -26,8 +26,8 @@ int main(int argc, char **argv) {
     VecVector2d p2d;
     VecVector3d p3d;
     {
-        string p2d_file = "../data/p2d.txt";
-        string p3d_file = "../data/p3d.txt";
+        string p2d_file = "../../../bundle_adjustment/ba_gauss_newton/data/p2d.txt";
+        string p3d_file = "../../../bundle_adjustment/ba_gauss_newton/data/p3d.txt";
 
         ifstream fileP2D(p2d_file);
         ifstream fileP3D(p3d_file);
