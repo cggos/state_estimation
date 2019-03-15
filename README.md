@@ -28,8 +28,9 @@
 
 ## Optimizer
 
-* G2O
-* Ceres
+* [g2o](https://openslam-org.github.io/g2o.html): A General Framework for Graph Optimization
+  - recommend version: commit id ==ff647bd== (ff647bd7537860a2b53b3b774ea821a3170feb13)
+* [Ceres Solver](http://ceres-solver.org/): an open source C++ library for modeling and solving large, complicated optimization problems
 * iSAM
 * GTSAM
 
