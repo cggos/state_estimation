@@ -13,14 +13,13 @@
 
 # 2. Filters
 
-## KF (Kalman Filter)
-
-## EKF (Extended Kalman Filter)
+* KF (Kalman Filter)
+* EKF (Extended Kalman Filter)
 
 
 # 3. Optimization
 
-## Methods
+## Basics
 
 * Gauss Newton
 * Levenberg-Marquadt
@@ -29,8 +28,9 @@
 ## Optimizer
 
 * [g2o](https://openslam-org.github.io/g2o.html): A General Framework for Graph Optimization
-  - recommend version: commit id ==ff647bd== (ff647bd7537860a2b53b3b774ea821a3170feb13)
+  - recommend version: commit id **ff647bd** (ff647bd7537860a2b53b3b774ea821a3170feb13)
 * [Ceres Solver](http://ceres-solver.org/): an open source C++ library for modeling and solving large, complicated optimization problems
+  - [Ceres-Solver 从入门到上手视觉SLAM位姿优化问题](https://blog.csdn.net/u011178262/article/details/88774577)
 * iSAM
 * GTSAM
 
@@ -47,6 +47,8 @@
 # 4. Dataset
 
 ##  BAL Dataset
+
+* Bundle Adjustment in the Large
 
 ## g2o files
 * sphere.g2o
