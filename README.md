@@ -30,6 +30,7 @@
 * [g2o](https://openslam-org.github.io/g2o.html): A General Framework for Graph Optimization
   - recommend version: commit id **ff647bd** (ff647bd7537860a2b53b3b774ea821a3170feb13)
   - [Ubuntu 16.04.1 :: error while trying to run g2o_viewer](https://github.com/RainerKuemmerle/g2o/issues/133#issuecomment-265894146)
+  - [SLAM Implementation: Bundle Adjustment with g2o](https://fzheng.me/2016/03/15/g2o-demo/)
 * [Ceres Solver](http://ceres-solver.org/): an open source C++ library for modeling and solving large, complicated optimization problems
   - [Ceres-Solver 从入门到上手视觉SLAM位姿优化问题](https://blog.csdn.net/u011178262/article/details/88774577)
 * iSAM
