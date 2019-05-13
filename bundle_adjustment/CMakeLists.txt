@@ -10,7 +10,6 @@ SET(G2O_LIBS g2o_cli g2o_ext_freeglut_minimal g2o_simulator g2o_solver_slam2d_li
     g2o_stuff g2o_types_sclam2d g2o_parser g2o_solver_pcg g2o_types_data g2o_types_sim3 cxsparse )
 
 add_subdirectory(common)
-include_directories(common)
 
 add_subdirectory(ba_gauss_newton)
 add_subdirectory(ba_demo_ceres)

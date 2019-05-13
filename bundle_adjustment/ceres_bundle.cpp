@@ -1,11 +1,11 @@
 #include <iostream>
 #include <fstream>
+
 #include <ceres/ceres.h>
 
-#include "BALProblem.h"
-#include "BundleParams.h"
-
-#include "projection.h"
+#include "common/BALProblem.h"
+#include "common/BundleParams.h"
+#include "common/projection.h"
 
 class SnavelyReprojectionError {
 public:
