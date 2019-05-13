@@ -1,7 +1,7 @@
 #ifndef PROJECTION_H
 #define PROJECTION_H
 
-#include "tools/rotation.h"
+#include "rotation.h"
 
 // camera : 9 dims array with 
 // [0-2] : angle-axis rotation 

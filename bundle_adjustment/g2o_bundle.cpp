@@ -51,12 +51,10 @@ void BuildProblem(const BALProblem* bal_problem, g2o::SparseOptimizer* optimizer
     const double* raw_cameras = bal_problem->cameras();
 
     for(int i = 0; i < num_cameras; ++i) {
-
         ConstVectorRef temVecCamera(raw_cameras + camera_block_size * i, camera_block_size);
         VertexCameraBAL *pCamera = new VertexCameraBAL();
         pCamera->setEstimate(temVecCamera);   // initial value for the camera i..
         pCamera->setId(i);                    // set id for each camera vertex
-
         optimizer->addVertex(pCamera);
     }
 
@@ -64,13 +62,11 @@ void BuildProblem(const BALProblem* bal_problem, g2o::SparseOptimizer* optimizer
     const double* raw_points = bal_problem->points();
     // const int point_block_size = bal_problem->point_block_size();
     for(int j = 0; j < num_points; ++j) {
-
         ConstVectorRef temVecPoint(raw_points + point_block_size * j, point_block_size);
         VertexPointBAL *pPoint = new VertexPointBAL();
         pPoint->setEstimate(temVecPoint);   // initial value for the point i..
         // each vertex should have an unique id, no matter it is a camera vertex, or a point vertex
         pPoint->setId(j + num_cameras);
-
         pPoint->setMarginalized(true);
         optimizer->addVertex(pPoint);
     }
@@ -102,103 +98,84 @@ void BuildProblem(const BALProblem* bal_problem, g2o::SparseOptimizer* optimizer
     }
 }
 
-void WriteToBALProblem(BALProblem* bal_problem, g2o::SparseOptimizer* optimizer)
-{
-    const int num_points        = bal_problem->num_points();
-    const int num_cameras       = bal_problem->num_cameras();
+void WriteToBALProblem(BALProblem* bal_problem, g2o::SparseOptimizer* optimizer) {
+    const int num_points = bal_problem->num_points();
+    const int num_cameras = bal_problem->num_cameras();
     const int camera_block_size = bal_problem->camera_block_size();
-    const int point_block_size  = bal_problem->point_block_size();
+    const int point_block_size = bal_problem->point_block_size();
 
-    double* raw_cameras = bal_problem->mutable_cameras();
-    for(int i = 0; i < num_cameras; ++i) {
+    double *raw_cameras = bal_problem->mutable_cameras();
+    for (int i = 0; i < num_cameras; ++i) {
         VertexCameraBAL *pCamera = dynamic_cast<VertexCameraBAL *>(optimizer->vertex(i));
         Eigen::VectorXd NewCameraVec = pCamera->estimate();
         memcpy(raw_cameras + i * camera_block_size, NewCameraVec.data(), sizeof(double) * camera_block_size);
     }
 
-    double* raw_points = bal_problem->mutable_points();
-    for(int j = 0; j < num_points; ++j) {
+    double *raw_points = bal_problem->mutable_points();
+    for (int j = 0; j < num_points; ++j) {
         VertexPointBAL *pPoint = dynamic_cast<VertexPointBAL *>(optimizer->vertex(j + num_cameras));
         Eigen::Vector3d NewPointVec = pPoint->estimate();
         memcpy(raw_points + j * point_block_size, NewPointVec.data(), sizeof(double) * point_block_size);
     }
 }
 
-void SetSolverOptionsFromFlags(BALProblem* bal_problem, const BundleParams& params, g2o::SparseOptimizer* optimizer)
-{
-    g2o::LinearSolver<BalBlockSolver::PoseMatrixType>* linearSolver = 0;
-
-    if(params.linear_solver == "dense_schur" ) {
+void SetSolverOptionsFromFlags(BALProblem* bal_problem, const BundleParams& params, g2o::SparseOptimizer* optimizer) {
+    g2o::LinearSolver<BalBlockSolver::PoseMatrixType> *linearSolver = 0;
+    if (params.linear_solver == "dense_schur") {
         linearSolver = new g2o::LinearSolverDense<BalBlockSolver::PoseMatrixType>();
-    }
-    else if(params.linear_solver == "sparse_schur") {
+    } else if (params.linear_solver == "sparse_schur") {
         linearSolver = new g2o::LinearSolverCholmod<BalBlockSolver::PoseMatrixType>();
         // AMD ordering , only needed for sparse cholesky solver
-        dynamic_cast<g2o::LinearSolverCholmod<BalBlockSolver::PoseMatrixType>* >(linearSolver)->setBlockOrdering(true);
+        dynamic_cast<g2o::LinearSolverCholmod<BalBlockSolver::PoseMatrixType> * >(linearSolver)->setBlockOrdering(true);
     }
 
     BalBlockSolver *solver_ptr = new BalBlockSolver(linearSolver);
-
-    g2o::OptimizationAlgorithmWithHessian* solver;
-
-    if(params.trust_region_strategy == "levenberg_marquardt") {
+    g2o::OptimizationAlgorithmWithHessian *solver;
+    if (params.trust_region_strategy == "levenberg_marquardt") {
         solver = new g2o::OptimizationAlgorithmLevenberg(solver_ptr);
-    }
-    else if(params.trust_region_strategy == "dogleg") {
+    } else if (params.trust_region_strategy == "dogleg") {
         solver = new g2o::OptimizationAlgorithmDogleg(solver_ptr);
-    }
-    else {
+    } else {
         std::cout << "Please check your trust_region_strategy parameter again.." << std::endl;
         exit(EXIT_FAILURE);
     }
-
     optimizer->setAlgorithm(solver);
 }
 
-
-void SolveProblem(const char* filename, const BundleParams& params)
-{
+void SolveProblem(const char* filename, const BundleParams& params) {
     BALProblem bal_problem(filename);
 
-    std::cout << "bal problem file loaded..." << std::endl
+    std::cout << "\n\n"
+              << "bal problem file loaded..." << std::endl
               << "bal problem have " << bal_problem.num_cameras() << " cameras and "
               << bal_problem.num_points() << " points. " << std::endl
               << "Forming " << bal_problem.num_observations() << " observatoins. " << std::endl;
 
     // store the initial 3D cloud points and camera pose..
-    if(!params.initial_ply.empty()){
-        bal_problem.WriteToPLYFile( params.initial_ply );
+    if (!params.initial_ply.empty()) {
+        bal_problem.WriteToPLYFile(params.initial_ply);
     }
-
-    std::cout << "beginning problem..." << std::endl;
 
     // add some noise for the intial value
     srand(params.random_seed);
     bal_problem.Normalize();
     bal_problem.Perturb(params.rotation_sigma, params.translation_sigma, params.point_sigma);
 
-    std::cout << "Normalization complete..." << std::endl;
-
-    g2o::SparseOptimizer optimizer;
-    SetSolverOptionsFromFlags(&bal_problem, params, &optimizer);
-    BuildProblem(&bal_problem, &optimizer, params);
-
-    std::cout << "begin optimizaiton .."<< std::endl;
-
-    optimizer.initializeOptimization();
-    optimizer.setVerbose(true);
-    optimizer.optimize(params.num_iterations);
-
-    std::cout << "optimization complete.. "<< std::endl;
-
-    // write the optimized data into BALProblem class
-    WriteToBALProblem(&bal_problem, &optimizer);
-
-    // write the result into a .ply file.
-    if(!params.final_ply.empty()){
-        bal_problem.WriteToPLYFile( params.final_ply );
+    {
+        g2o::SparseOptimizer optimizer;
+        SetSolverOptionsFromFlags(&bal_problem, params, &optimizer);
+        BuildProblem(&bal_problem, &optimizer, params);
+        optimizer.initializeOptimization();
+        optimizer.setVerbose(true);
+        optimizer.optimize(params.num_iterations);
+        // write the optimized data into BALProblem class
+        WriteToBALProblem(&bal_problem, &optimizer);
     }
 
+    // write the result into a .ply file.
+    if (!params.final_ply.empty()) {
+        bal_problem.WriteToPLYFile(params.final_ply);
+    }
 }
 
 int main(int argc, char** argv)
@@ -206,7 +183,7 @@ int main(int argc, char** argv)
     BundleParams params(argc, argv);
 
     if(params.input.empty()){
-        std::cout << "Usage: bundle_adjuster -input <path to bal_dataset: problem-*.txt>\n";
+        std::cout << "Usage: bundle_g2o -input <path to bal_dataset: problem-*.txt>\n";
         return 1;
     }
 

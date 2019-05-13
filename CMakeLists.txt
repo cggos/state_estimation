@@ -26,17 +26,11 @@ if(G2O_FOUND)
     link_directories(/opt/g2o/lib)
 endif()
 
-
 add_subdirectory( optimization_basis/gauss_newton )
 add_subdirectory( optimization_basis/g2o_curve_fitting )
 add_subdirectory( optimization_basis/ceres_curve_fitting )
 
-add_subdirectory( bundle_adjustment/common )
-add_subdirectory( bundle_adjustment/ba_gauss_newton )
-add_subdirectory( bundle_adjustment/ba_g2o )
-add_subdirectory( bundle_adjustment/ba_ceres )
-add_subdirectory( bundle_adjustment/ba_demo_ceres )
-
+add_subdirectory( bundle_adjustment )
 add_subdirectory( pose_graph )
 
 add_subdirectory( ceres_solver )
