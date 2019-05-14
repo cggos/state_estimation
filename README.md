@@ -45,6 +45,12 @@
 * [sba](http://users.ics.forth.gr/~lourakis/sba/): A Generic Sparse Bundle Adjustment C/C++ Package Based on the Levenberg-Marquardt Algorithm
 * [Bundle Adjustment in the Large](http://grail.cs.washington.edu/projects/bal/)
 
+Sparse Hessian matrix :
+
+<div align=center>
+  <img src="images/mat_H.png">
+</div>
+
 
 # 4. Dataset
 

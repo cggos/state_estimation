@@ -14,6 +14,12 @@ add_subdirectory(common)
 add_subdirectory(ba_gauss_newton)
 add_subdirectory(ba_demo_ceres)
 
+find_package( OpenCV )
+if( OpenCV_FOUND )
+    include_directories( ${OpenCV_INCLUDE_DIRS} )
+    link_libraries( ${OpenCV_LIBS} )
+endif()
+
 add_executable(ba_ceres ceres_bundle.cpp)
 target_link_libraries(ba_ceres ${CERES_LIBRARIES} BALProblem ParseCmd)
 
