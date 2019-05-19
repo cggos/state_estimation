@@ -42,8 +42,12 @@
 
 ## Bundle Adjustment
 
+* [Bundle adjustment (wikipedia)](https://en.wikipedia.org/wiki/Bundle_adjustment)
 * [sba](http://users.ics.forth.gr/~lourakis/sba/): A Generic Sparse Bundle Adjustment C/C++ Package Based on the Levenberg-Marquardt Algorithm
+* [cvsba](https://www.uco.es/investiga/grupos/ava/node/39): an OpenCV wrapper for sba library
+* [sparseLM](http://users.ics.forth.gr/~lourakis/sparseLM/) : Sparse Levenberg-Marquardt nonlinear least squares in C/C++
 * [Bundle Adjustment in the Large](http://grail.cs.washington.edu/projects/bal/)
+* [Multicore Bundle Adjustment](http://grail.cs.washington.edu/projects/mcba/)
 
 Sparse Hessian matrix :
 
