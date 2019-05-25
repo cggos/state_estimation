@@ -35,6 +35,7 @@
      |                                            |
      \*------------------------------------------*/
 ```
+
 <div align=center>
   <img src="images/KalmanFilterMatrixProcessFlowchart.png">
 </div>
@@ -50,3 +51,7 @@
 * [FilterPy](https://filterpy.readthedocs.io/en/latest/) is a Python library that implements a number of Bayesian filters, most notably Kalman filters
 * [pykalman](https://pykalman.github.io/): the dead-simple Kalman Filter, Kalman Smoother, and EM library for Python
 * [rlabbe/Kalman-and-Bayesian-Filters-in-Python](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python): Kalman Filter book using Jupyter Notebook
+
+## Books
+
+* *[卡尔曼滤波原理及应用：MATLAB仿真](http://yydz.phei.com.cn/book/eebook/%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8%EF%BC%9Amatlab%E4%BB%BF%E7%9C%9F/)*

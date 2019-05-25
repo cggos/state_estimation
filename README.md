@@ -13,6 +13,8 @@
 
 # 2. Filters
 
+## Kalman Filter
+
 * KF (Kalman Filter)
 * EKF (Extended Kalman Filter)
 
