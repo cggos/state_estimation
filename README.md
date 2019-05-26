@@ -27,6 +27,7 @@
 
 * [读懂概率图：你需要从基本概念和参数估计开始](https://www.jiqizhixin.com/articles/2017-11-29-3)
 * *[Probabilistic Graphical Models (10-708, Spring 2014)](http://www.cs.cmu.edu/~epxing/Class/10708-14/lecture.html)*
+* [Probabilistic inference and factor graphs](http://deepdive.stanford.edu/inference)
 * [pgmpy](http://pgmpy.org/)
 * [OpenGM](http://hciweb2.iwr.uni-heidelberg.de/opengm/): a C++ template library for discrete factor graph models and distributive operations on these models
 
@@ -56,13 +57,27 @@
   - recommend version: commit id **ff647bd** (ff647bd7537860a2b53b3b774ea821a3170feb13)
   - [Ubuntu 16.04.1 :: error while trying to run g2o_viewer](https://github.com/RainerKuemmerle/g2o/issues/133#issuecomment-265894146)
   - [SLAM Implementation: Bundle Adjustment with g2o](https://fzheng.me/2016/03/15/g2o-demo/)
+  
 * [Ceres Solver](http://ceres-solver.org/): an open source C++ library for modeling and solving large, complicated optimization problems
   - [Ceres-Solver 从入门到上手视觉SLAM位姿优化问题](https://blog.csdn.net/u011178262/article/details/88774577)
-* iSAM
-* GTSAM
+
+* [iSAM (Incremental Smoothing and Mapping)](https://people.csail.mit.edu/kaess/isam/) is an optimization library for sparse nonlinear problems as encountered in simultaneous localization and mapping (SLAM), provides efficient algorithms for batch and incremental optimization, recovering the exact least-squares solution
+
+* [GTSAM](https://gtsam.org/)
+  - [Factor Graphs and GTSAM](https://gtsam.org/tutorials/intro.html)
+
+* [TORO (Tree-based netwORk Optimizer)](https://openslam-org.github.io/toro.html) is an optimization approach for constraint-network
+
+* [vertigo (Versatile Extensions for RobusT Inference using Graph Optimization)](https://github.com/christiankerl/vertigo/tree/master/trunk) is an extension library for g2o and gtsam 2.0
+
 * [NLopt](https://nlopt.readthedocs.io) is a library for nonlinear local and global optimization, for functions with and without gradient information
 
+* [OR-Tools](https://developers.google.com/optimization/) is an open source software suite for optimization, tuned for tackling the world's toughest problems in vehicle routing, flows, integer and linear programming, and constraint programming.
+
 ## Pose Graph
+
+* [Pose Graph Optimization](http://rvsn.csail.mit.edu/graphoptim/)
+* [Robust Factor Graphs for Pose Graph SLAM](https://www.tu-chemnitz.de/etit/proaut/en/research/robustslam.html)
 
 ## Bundle Adjustment
 
