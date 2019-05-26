@@ -6,10 +6,33 @@
 
 # 1. Probability Theory and Statistics
 
+## MLE, MAP & MLS
+
 * MLE (Maximum Likelihood Estimate)
-* OLS (Ordinary Least Squares)
+  - **模型已定，参数未知**：找出一组参数，使得模型产生出观测数据的概率最大，即找出一组能使似然函数最大的参数
+* MAP (Maximum A Posteriori)
+* MLS (Minimum Least Squares)
+  - OLS (Ordinary Least Squares)
+  - [Weighted Least Squares](https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd432.htm)
+
+## RANSAC
+
 * RANSAC (RANdom SAmple Consensus)
-* M-Estimator
+
+## M-Estimator
+* [M-estimators](http://www.statisticalconsultants.co.nz/blog/m-estimators.html)
+* *MLESAC: A New Robust Estimator with Application to Estimating Image Geometry*
+
+## Probabilistic Graphical Models
+
+* [读懂概率图：你需要从基本概念和参数估计开始](https://www.jiqizhixin.com/articles/2017-11-29-3)
+* *[Probabilistic Graphical Models (10-708, Spring 2014)](http://www.cs.cmu.edu/~epxing/Class/10708-14/lecture.html)*
+* [pgmpy](http://pgmpy.org/)
+* [OpenGM](http://hciweb2.iwr.uni-heidelberg.de/opengm/): a C++ template library for discrete factor graph models and distributive operations on these models
+
+### Factor Graph
+
+### Bayesian Network
 
 # 2. Filters
 
@@ -37,10 +60,9 @@
   - [Ceres-Solver 从入门到上手视觉SLAM位姿优化问题](https://blog.csdn.net/u011178262/article/details/88774577)
 * iSAM
 * GTSAM
+* [NLopt](https://nlopt.readthedocs.io) is a library for nonlinear local and global optimization, for functions with and without gradient information
 
 ## Pose Graph
-
-## Factor Graph
 
 ## Bundle Adjustment
 
@@ -72,9 +94,11 @@ Sparse Hessian matrix :
 
 # 5. Books
 
+* ***[Probability, Statistics and Random Processes](https://www.probabilitycourse.com/)***
+
+* ***STATE ESTIMATION FOR ROBOTICS***
+
 * ***[Probabilistic Robotics](http://www.probabilistic-robotics.org/)***
   - [pptacher/probabilistic_robotics](https://github.com/pptacher/probabilistic_robotics): solution of exercises of the book "probabilistic robotics"
 
-<div align=center>
-  <img src="images/probabilistic_robotics.jpg">
-</div>
+* ***Factor Graphs for Robot Perception***
