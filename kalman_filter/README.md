@@ -6,6 +6,8 @@
 * [THE KALMAN FILTER (ilectureonline)](http://www.ilectureonline.com/lectures/subject/SPECIAL%20TOPICS/26/190)
 * [How a Kalman filter works, in pictures](http://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/)
 
+* [mherb/kalman](https://github.com/mherb/kalman): Header-only C++11 Kalman Filtering Library (EKF, UKF) based on Eigen3
+
 -----
 
 ## Overview
