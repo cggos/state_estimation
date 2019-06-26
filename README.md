@@ -74,6 +74,8 @@
 
 * [OR-Tools](https://developers.google.com/optimization/) is an open source software suite for optimization, tuned for tackling the world's toughest problems in vehicle routing, flows, integer and linear programming, and constraint programming.
 
+* [immoptibox](http://www2.imm.dtu.dk/projects/immoptibox/): A MATLAB TOOLBOX FOR OPTIMIZATION AND DATA FITTING
+
 ## Pose Graph
 
 * [Pose Graph Optimization](http://rvsn.csail.mit.edu/graphoptim/)
