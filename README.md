@@ -13,7 +13,7 @@
 * MAP (Maximum A Posteriori)
 * MLS (Minimum Least Squares)
   - OLS (Ordinary Least Squares)
-  - [Weighted Least Squares](https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd432.htm)
+  - WLS ([Weighted Least Squares](https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd432.htm))
 
 ## RANSAC
 
@@ -34,6 +34,8 @@
 ### Factor Graph
 
 ### Bayesian Network
+
+### Markov Random Fields
 
 # 2. Filters
 
@@ -57,7 +59,7 @@
   - recommend version: commit id **ff647bd** (ff647bd7537860a2b53b3b774ea821a3170feb13)
   - [Ubuntu 16.04.1 :: error while trying to run g2o_viewer](https://github.com/RainerKuemmerle/g2o/issues/133#issuecomment-265894146)
   - [SLAM Implementation: Bundle Adjustment with g2o](https://fzheng.me/2016/03/15/g2o-demo/)
-  
+
 * [Ceres Solver](http://ceres-solver.org/): an open source C++ library for modeling and solving large, complicated optimization problems
   - [Ceres-Solver 从入门到上手视觉SLAM位姿优化问题](https://blog.csdn.net/u011178262/article/details/88774577)
 

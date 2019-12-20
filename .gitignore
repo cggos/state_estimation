@@ -5,3 +5,5 @@ cmake-build-debug/
 
 # matlab binary
 *.mat
+
+.tags
