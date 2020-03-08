@@ -7,7 +7,6 @@
 #include <sophus/se3.h>
 
 #include <ceres/ceres.h>
-#include <glog/logging.h>
 
 typedef std::vector<Eigen::Vector3d, Eigen::aligned_allocator<Eigen::Vector3d>> VecVector3d;
 typedef std::vector<Eigen::Vector2d, Eigen::aligned_allocator<Eigen::Vector2d>> VecVector2d;
@@ -23,9 +22,9 @@ public:
 
     virtual bool Evaluate(double const* const* parameters, double *residuals, double **jacobians) const {
 
-        Eigen::Map<const Eigen::Matrix<double,6,1>> T_se3(*parameters);
+        Eigen::Map<const Eigen::Matrix<double,6,1>> se3(*parameters);
 
-        Sophus::SE3 T_SE3 = Sophus::SE3::exp(T_se3);
+        Sophus::SE3 T_SE3 = Sophus::SE3::exp(se3);
 
         Eigen::Vector3d Pc = T_SE3 * observed_P_;
 
@@ -77,8 +76,6 @@ private:
 
 int main(int argc, char **argv)
 {
-    google::InitGoogleLogging(argv[0]);
-
     int n_points = 0;
 
     VecVector2d p2d;
