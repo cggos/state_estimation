@@ -4,9 +4,9 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 
-void DrawHessian(const BALProblem* bal_problem) {
+#include <Eigen/Core>
 
-    const int max_point_id = 1000;
+void DrawHessian(const BALProblem* bal_problem, const int max_point_id = 1000) {
 
     const int num_points        = bal_problem->num_points();
     const int num_cameras       = bal_problem->num_cameras();
@@ -34,14 +34,14 @@ void DrawHessian(const BALProblem* bal_problem) {
         int j = idx_obs[i];
         const int camera_id = bal_problem->camera_index()[j];
         const int point_id = bal_problem->point_index()[j];
-        std::cout << camera_id << ", " << point_id << std::endl;
+        // std::cout << camera_id << ", " << point_id << std::endl;
         mJ(i, camera_id) = 1;
         mJ(i, num_cameras + point_id) = 1;
     }
 
-    Eigen::MatrixXi mH = mJ.transpose() * mJ;
+    std::cout << "DrawHessian: mJ size is (" << mJ.rows() << ", " << mJ.cols() << ")" << std::endl;
 
-    std::cout << "=====: " << mH.rows() << ", " << mH.cols() << std::endl;
+    Eigen::MatrixXi mH = mJ.transpose() * mJ;
 
     cv::Mat mat_H(mH.rows(), mH.cols(), CV_8UC1);
     for (int y = 0; y < mH.rows(); ++y) {
@@ -52,7 +52,6 @@ void DrawHessian(const BALProblem* bal_problem) {
     cv::threshold(mat_H, mat_H, 0, 255, cv::THRESH_BINARY);
     cv::imshow("mat_H", mat_H);
     cv::waitKey(0);
-
 }
 
 #endif //SLAM_OPTIMIZATION_DRAW_HESSIAN_H

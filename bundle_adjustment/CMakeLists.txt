@@ -25,3 +25,6 @@ target_link_libraries(ba_ceres ${CERES_LIBRARIES} BALProblem ParseCmd)
 
 add_executable(ba_g2o g2o_bundle.cpp)
 target_link_libraries(ba_g2o ${G2O_LIBS} ${CHOLMOD_LIBRARIES} BALProblem ParseCmd)
+
+add_executable(bal_draw_hessian bal_draw_hessian.cpp)
+target_link_libraries(bal_draw_hessian BALProblem ParseCmd)

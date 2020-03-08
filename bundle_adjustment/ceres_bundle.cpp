@@ -6,7 +6,6 @@
 #include "common/BALProblem.h"
 #include "common/BundleParams.h"
 #include "common/projection.h"
-#include "common/draw_hessian.h"
 
 class SnavelyReprojectionError {
 public:
@@ -130,8 +129,6 @@ void SolveProblem(const char* filename, const BundleParams& params) {
     // write the result into a .ply file.
     if (!params.final_ply.empty())
         bal_problem.WriteToPLYFile(params.final_ply);
-
-    DrawHessian(&bal_problem);
 }
 
 int main(int argc, char** argv)
