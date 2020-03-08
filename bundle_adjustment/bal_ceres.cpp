@@ -3,9 +3,9 @@
 
 #include <ceres/ceres.h>
 
-#include "common/BALProblem.h"
-#include "common/BundleParams.h"
-#include "common/projection.h"
+#include "common/bal_problem.h"
+#include "common/bundle_params.h"
+#include "common/bal_projection.h"
 
 class SnavelyReprojectionError {
 public:

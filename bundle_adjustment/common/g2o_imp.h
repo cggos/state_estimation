@@ -22,7 +22,7 @@
 
 #include <ceres/internal/autodiff.h>
 
-#include "projection.h"
+#include "bal_projection.h"
 
 typedef g2o::BlockSolver<g2o::BlockSolverTraits<9,3> > BalBlockSolver;
 

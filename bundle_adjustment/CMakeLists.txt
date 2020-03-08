@@ -21,10 +21,10 @@ if( OpenCV_FOUND )
 endif()
 
 add_executable(bal_ceres bal_ceres.cpp)
-target_link_libraries(bal_ceres ${CERES_LIBRARIES} BALProblem ParseCmd)
+target_link_libraries(bal_ceres ${CERES_LIBRARIES} bal_problem parse_cmd)
 
 add_executable(bal_g2o bal_g2o.cpp)
-target_link_libraries(bal_g2o ${G2O_LIBS} ${CHOLMOD_LIBRARIES} BALProblem ParseCmd)
+target_link_libraries(bal_g2o ${G2O_LIBS} ${CHOLMOD_LIBRARIES} bal_problem parse_cmd)
 
 add_executable(bal_draw_hessian bal_draw_hessian.cpp)
-target_link_libraries(bal_draw_hessian BALProblem ParseCmd)
+target_link_libraries(bal_draw_hessian bal_problem parse_cmd)

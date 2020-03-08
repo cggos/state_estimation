@@ -8,9 +8,8 @@
 #include <Eigen/StdVector>
 #include <Eigen/Core>
 
-#include "common/BundleParams.h"
-#include "common/BALProblem.h"
-
+#include "common/bal_problem.h"
+#include "common/bundle_params.h"
 #include "common/g2o_imp.h"
 
 using namespace Eigen;

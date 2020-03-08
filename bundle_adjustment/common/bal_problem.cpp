@@ -1,4 +1,4 @@
-#include "BALProblem.h"
+#include "bal_problem.h"
 
 #include <cstdio>
 #include <fstream>
@@ -38,7 +38,7 @@ void FscanfOrDie(FILE *fptr, const char *format, T *value) {
         std::cerr << "Invalid UW data file. ";
 }
 
-//给一个三维向量加入噪声，很简单xyz依次加入随机值就好了。
+// 给一个三维向量加入噪声，很简单xyz依次加入随机值就好了。
 // 定义这个的目的是为了后面的Perturb()函数在增加噪声时，是分开对路标点，相机的旋转，相机的平移分别加入噪声的，
 // 并且这三个量都是三维的，所以定义一个三维向量添加噪声的函数
 void PerturbPoint3(const double sigma, double* point) {
@@ -72,11 +72,9 @@ BALProblem::BALProblem(const std::string& filename, bool use_quaternions) {
     FscanfOrDie(fptr, "%d", &num_points_);
     FscanfOrDie(fptr, "%d", &num_observations_);
 
-    std::cout << "Header: " << num_cameras_
-              << " " << num_points_
-              << " " << num_observations_;
+    std::cout << "Header: " << num_cameras_ << " " << num_points_ << " " << num_observations_;
 
-    point_index_ = new int[num_observations_];
+    point_index_  = new int[num_observations_];
     camera_index_ = new int[num_observations_];
     observations_ = new double[2 * num_observations_];
 
@@ -123,7 +121,6 @@ BALProblem::BALProblem(const std::string& filename, bool use_quaternions) {
         parameters_ = quaternion_parameters;
     }
 }
-
 
 void BALProblem::WriteToFile(const std::string& filename)const {
 

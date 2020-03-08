@@ -1,5 +1,6 @@
 #ifndef BALPROBLEM_H
 #define BALPROBLEM_H
+
 /**
  * 用于存储程序需要优化的数据
  * 宏观的功能有存储相机和路标点之间的关联，相机和路标的初始值，数据导出为PLY文件等功能
@@ -9,11 +10,11 @@
 #include <string>
 #include <iostream>
 
-
 class BALProblem
 {
 public:
     explicit BALProblem(const std::string& filename, bool use_quaternions = false);
+
     ~BALProblem(){
         delete[] point_index_;
         delete[] camera_index_;
@@ -26,10 +27,7 @@ public:
 
     void Normalize();
 
-    void Perturb(const double rotation_sigma,
-                 const double translation_sigma,
-                 const double point_sigma);
-    
+    void Perturb(const double rotation_sigma, const double translation_sigma, const double point_sigma);
     
     int camera_block_size()             const{ return use_quaternions_? 10 : 9;  }
     int point_block_size()              const{ return 3;                         }             
@@ -46,31 +44,25 @@ public:
     double* mutable_cameras()                { return parameters_;               }
     double* mutable_points()                 { return parameters_ + camera_block_size() * num_cameras_; }
 
-    double* mutable_camera_for_observation(int i){
+    double* mutable_camera_for_observation(int i) {
         return mutable_cameras() + camera_index_[i] * camera_block_size();
     }
 
-    double* mutable_point_for_observation(int i){
+    double* mutable_point_for_observation(int i) {
         return mutable_points() + point_index_[i] * point_block_size();
     }
 
-    const double* camera_for_observation(int i)const {
+    const double* camera_for_observation(int i) const {
         return cameras() + camera_index_[i] * camera_block_size();
     }
 
-    const double* point_for_observation(int i)const {
+    const double* point_for_observation(int i) const {
         return points() + point_index_[i] * point_block_size();
     }
 
-
 private:
-    void CameraToAngelAxisAndCenter(const double* camera,
-                                    double* angle_axis,
-                                    double* center)const;
-
-    void AngleAxisAndCenterToCamera(const double* angle_axis,
-                                    const double* center,
-                                    double* camera)const;
+    void CameraToAngelAxisAndCenter(const double* camera, double* angle_axis, double* center) const;
+    void AngleAxisAndCenterToCamera(const double* angle_axis, const double* center, double* camera) const;
 
     int num_cameras_;
     int num_points_;
@@ -82,7 +74,6 @@ private:
     int* camera_index_;
     double* observations_;
     double* parameters_; 
-
 };
 
 #endif // BALProblem.h

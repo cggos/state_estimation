@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "common/BALProblem.h"
-#include "common/BundleParams.h"
+#include "common/bal_problem.h"
+#include "common/bundle_params.h"
 #include "common/draw_hessian.h"
 
 int main(int argc, char** argv)
