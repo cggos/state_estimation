@@ -84,22 +84,22 @@ int main(int argc, char **argv) {
             double y2 = y*y;
             double z2 = z*z;
 
-            v2error = p_uv - (K * Pc).hnormalized();
+            v2error = (K * Pc).hnormalized() - p_uv; // 预测值-观测值
 
             cost += v2error.squaredNorm();
 
-            J(0,0) = -fx/z;
+            J(0,0) =  fx/z;
             J(0,1) =  0;
-            J(0,2) =  fx*x/z2;
-            J(0,3) =  fx*x*y/z2;
-            J(0,4) = -fx-fx*x2/z2;
-            J(0,5) =  fx*y/z;
+            J(0,2) = -fx*x/z2;
+            J(0,3) = -fx*x*y/z2;
+            J(0,4) =  fx+fx*x2/z2;
+            J(0,5) = -fx*y/z;
             J(1,0) =  0;
-            J(1,1) = -fy/z;
-            J(1,2) =  fy*y/z2;
-            J(1,3) =  fy+fy*y2/z2;
-            J(1,4) = -fy*x*y/z2;
-            J(1,5) = -fy*x/z;
+            J(1,1) =  fy/z;
+            J(1,2) = -fy*y/z2;
+            J(1,3) = -fy-fy*y2/z2;
+            J(1,4) =  fy*x*y/z2;
+            J(1,5) =  fy*x/z;
 
             H +=  J.transpose() * J;
             b += -J.transpose() * v2error;
