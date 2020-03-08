@@ -24,8 +24,6 @@
 
 #include "bal_projection.h"
 
-typedef g2o::BlockSolver<g2o::BlockSolverTraits<9,3> > BalBlockSolver;
-
 class VertexCamera : public g2o::BaseVertex<9,Eigen::VectorXd> {
 public:
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
@@ -115,7 +113,10 @@ public:
 };
 
 void SetSolverOptions(g2o::SparseOptimizer* optimizer, const std::string& param_linear_solver, const std::string& param_trust_region_strategy) {
-    g2o::LinearSolver<BalBlockSolver::PoseMatrixType> *linearSolver = 0;
+    typedef g2o::BlockSolver<g2o::BlockSolverTraits<9,3> > BalBlockSolver;
+
+    // g2o::LinearSolver<BalBlockSolver::PoseMatrixType> *linearSolver = 0;
+    BalBlockSolver::LinearSolverType *linearSolver = 0;
     if (param_linear_solver == "dense_schur") {
         linearSolver = new g2o::LinearSolverDense<BalBlockSolver::PoseMatrixType>();
     } else if (param_linear_solver == "sparse_schur") {
@@ -124,16 +125,18 @@ void SetSolverOptions(g2o::SparseOptimizer* optimizer, const std::string& param_
         dynamic_cast<g2o::LinearSolverCholmod<BalBlockSolver::PoseMatrixType> * >(linearSolver)->setBlockOrdering(true);
     }
 
-    BalBlockSolver *solver_ptr = new BalBlockSolver(linearSolver);
+    BalBlockSolver *solver_ptr = new BalBlockSolver(std::unique_ptr<BalBlockSolver::LinearSolverType>(linearSolver));
+
     g2o::OptimizationAlgorithmWithHessian *solver;
     if (param_trust_region_strategy == "levenberg_marquardt") {
-        solver = new g2o::OptimizationAlgorithmLevenberg(solver_ptr);
+        solver = new g2o::OptimizationAlgorithmLevenberg(std::unique_ptr<BalBlockSolver>(solver_ptr));
     } else if (param_trust_region_strategy == "dogleg") {
-        solver = new g2o::OptimizationAlgorithmDogleg(solver_ptr);
+        solver = new g2o::OptimizationAlgorithmDogleg(std::unique_ptr<BalBlockSolver>(solver_ptr));
     } else {
         std::cout << "Please check your trust_region_strategy parameter again.." << std::endl;
         exit(EXIT_FAILURE);
     }
+
     optimizer->setAlgorithm(solver);
 }
 
