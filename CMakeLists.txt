@@ -26,9 +26,7 @@ if(G2O_FOUND)
     link_directories(/opt/g2o/lib)
 endif()
 
-add_subdirectory( optimization_basis/gauss_newton )
-add_subdirectory( optimization_basis/g2o_curve_fitting )
-add_subdirectory( optimization_basis/ceres_curve_fitting )
+add_subdirectory( optimization_basis )
 
 add_subdirectory( bundle_adjustment )
 add_subdirectory( pose_graph )

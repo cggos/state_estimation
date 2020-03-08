@@ -9,7 +9,7 @@ using namespace Eigen;
 
 int main(int argc, char **argv) {
 
-    double ar = 1.0, br = 2.0, cr = 1.0;         // 真实参数值
+    double ar = 1.0, br =  2.0, cr = 1.0;        // 真实参数值
     double ae = 2.0, be = -1.0, ce = 5.0;        // 估计参数值
 
     int N = 100;                                 // 数据点
@@ -23,10 +23,8 @@ int main(int argc, char **argv) {
         y_data.push_back(exp(ar * x * x + br * x + cr) + rng.gaussian(w_sigma));
     }
 
-    // 开始Gauss-Newton迭代
     double xi, yi, ye, error, cost, lastCost;
     for (int iter = 0; iter < 100; iter++) {
-
         Vector3d J;
         Matrix3d H = Matrix3d::Zero();             // Hessian = J^T J in Gauss-Newton
         Vector3d b = Vector3d::Zero();             // bias
@@ -39,11 +37,11 @@ int main(int argc, char **argv) {
 
 			ye = exp(ae*xi*xi + be*xi + ce);
 
-            error = yi - ye;
+            error = ye - yi;
 
-            J[0] = -ye*xi*xi;  // de/da
-            J[1] = -ye*xi;     // de/db
-            J[2] = -ye;        // de/dc
+            J[0] = ye*xi*xi;  // de/da
+            J[1] = ye*xi;     // de/db
+            J[2] = ye;        // de/dc
 
             H += J * J.transpose(); // GN近似的H
             b += -error * J;
@@ -51,7 +49,6 @@ int main(int argc, char **argv) {
             cost += error * error;
         }
 
-        // 求解线性方程 Hx=b，建议用ldlt
         Vector3d dx;
 		dx = H.ldlt().solve(b);
 
@@ -61,12 +58,10 @@ int main(int argc, char **argv) {
         }
 
         if (iter > 0 && cost > lastCost) {
-            // 误差增长了，说明近似的不够好
             cout << "cost: " << cost << ", last cost: " << lastCost << endl;
             break;
         }
 
-        // 更新abc估计值
         ae += dx[0];
         be += dx[1];
         ce += dx[2];
