@@ -28,7 +28,6 @@ endif()
 
 add_subdirectory( optimization_basis )
 
-add_subdirectory( bundle_adjustment )
 add_subdirectory( pose_graph )
 
 add_subdirectory( ceres_solver )

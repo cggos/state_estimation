@@ -56,12 +56,9 @@
 ## Optimizer
 
 * [g2o](https://openslam-org.github.io/g2o.html): A General Framework for Graph Optimization
-  - recommend version: commit id **ff647bd** (ff647bd7537860a2b53b3b774ea821a3170feb13)
   - [Ubuntu 16.04.1 :: error while trying to run g2o_viewer](https://github.com/RainerKuemmerle/g2o/issues/133#issuecomment-265894146)
-  - [SLAM Implementation: Bundle Adjustment with g2o](https://fzheng.me/2016/03/15/g2o-demo/)
 
 * [Ceres Solver](http://ceres-solver.org/): an open source C++ library for modeling and solving large, complicated optimization problems
-  - [Ceres-Solver 从入门到上手视觉SLAM位姿优化问题](https://blog.csdn.net/u011178262/article/details/88774577)
 
 * [iSAM (Incremental Smoothing and Mapping)](https://people.csail.mit.edu/kaess/isam/) is an optimization library for sparse nonlinear problems as encountered in simultaneous localization and mapping (SLAM), provides efficient algorithms for batch and incremental optimization, recovering the exact least-squares solution
 
@@ -83,27 +80,8 @@
 * [Pose Graph Optimization](http://rvsn.csail.mit.edu/graphoptim/)
 * [Robust Factor Graphs for Pose Graph SLAM](https://www.tu-chemnitz.de/etit/proaut/en/research/robustslam.html)
 
-## Bundle Adjustment
-
-* [Bundle adjustment (wikipedia)](https://en.wikipedia.org/wiki/Bundle_adjustment)
-* [sba](http://users.ics.forth.gr/~lourakis/sba/): A Generic Sparse Bundle Adjustment C/C++ Package Based on the Levenberg-Marquardt Algorithm
-* [cvsba](https://www.uco.es/investiga/grupos/ava/node/39): an OpenCV wrapper for sba library
-* [sparseLM](http://users.ics.forth.gr/~lourakis/sparseLM/) : Sparse Levenberg-Marquardt nonlinear least squares in C/C++
-* [Bundle Adjustment in the Large](http://grail.cs.washington.edu/projects/bal/)
-* [Multicore Bundle Adjustment](http://grail.cs.washington.edu/projects/mcba/)
-
-Sparse Hessian matrix :
-
-<div align=center>
-  <img src="images/mat_H.png">
-</div>
-
 
 # 4. Dataset
-
-##  BAL Dataset
-
-* Bundle Adjustment in the Large
 
 ##  g2o Dataset
 
