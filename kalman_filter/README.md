@@ -1,5 +1,8 @@
 # Kalman Filter
 
+* [The Bayesian Filtering Library (BFL)](https://orocos.org/bfl)
+  - [bfl (ROS Wiki)](http://wiki.ros.org/bfl)
+
 * [The Kalman Filter](http://www.cs.unc.edu/~welch/kalman/)
 * [Kalman Filter For Dummies](http://bilgin.esme.org/BitsAndBytes/KalmanFilterforDummies)
 * [Understanding Kalman Filters (mathworks)](https://www.mathworks.com/videos/series/understanding-kalman-filters.html)
