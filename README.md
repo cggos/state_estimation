@@ -63,6 +63,7 @@
 
 * [g2o](https://openslam-org.github.io/g2o.html): A General Framework for Graph Optimization
   - [Ubuntu 16.04.1 :: error while trying to run g2o_viewer](https://github.com/RainerKuemmerle/g2o/issues/133#issuecomment-265894146)
+  - [g2o_viewer error](https://github.com/rainerkuemmerle/g2o/issues/151#issuecomment-281599307)
   - [SLAM Implementation: Bundle Adjustment with g2o](https://fzheng.me/2016/03/15/g2o-demo/)
 
 * [Ceres Solver](http://ceres-solver.org/): an open source C++ library for modeling and solving large, complicated optimization problems
@@ -97,9 +98,9 @@
 
 Sparse Hessian matrix :
 
-<div align=center>
-  <img src="images/mat_H.png">
-</div>
+<p align="center">
+  <img src="images/mat_H.png"/>
+</p>
 
 
 # 4. Dataset
