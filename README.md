@@ -39,10 +39,7 @@
 
 # 2. Filters
 
-## Kalman Filter
-
-* KF (Kalman Filter)
-* EKF (Extended Kalman Filter)
+* Kalman Filter
 
 
 # 3. Optimization
@@ -69,8 +66,6 @@
 * [Ceres Solver](http://ceres-solver.org/): an open source C++ library for modeling and solving large, complicated optimization problems
   - [Ceres-Solver 从入门到上手视觉SLAM位姿优化问题](https://blog.csdn.net/u011178262/article/details/88774577)
 
-* [iSAM (Incremental Smoothing and Mapping)](https://people.csail.mit.edu/kaess/isam/) is an optimization library for sparse nonlinear problems as encountered in simultaneous localization and mapping (SLAM), provides efficient algorithms for batch and incremental optimization, recovering the exact least-squares solution
-
 * [GTSAM](https://gtsam.org/)
   - [Factor Graphs and GTSAM](https://gtsam.org/tutorials/intro.html)
 
@@ -81,20 +76,7 @@
 * [OR-Tools](https://developers.google.com/optimization/) is an open source software suite for optimization, tuned for tackling the world's toughest problems in vehicle routing, flows, integer and linear programming, and constraint programming.
 
 
-## Pose Graph Optimization
-
-* [Pose Graph Optimization](http://rvsn.csail.mit.edu/graphoptim/)
-* [Robust Factor Graphs for Pose Graph SLAM](https://www.tu-chemnitz.de/etit/proaut/en/research/robustslam.html)
-
-
 ## Bundle Adjustment
-
-* [Bundle adjustment (wikipedia)](https://en.wikipedia.org/wiki/Bundle_adjustment)
-* [sba](http://users.ics.forth.gr/~lourakis/sba/): A Generic Sparse Bundle Adjustment C/C++ Package Based on the Levenberg-Marquardt Algorithm
-* [cvsba](https://www.uco.es/investiga/grupos/ava/node/39): an OpenCV wrapper for sba library
-* [Bundle Adjustment in the Large](http://grail.cs.washington.edu/projects/bal/)
-* [Multicore Bundle Adjustment](http://grail.cs.washington.edu/projects/mcba/)
-
 
 Sparse Hessian matrix :
 
