@@ -10,6 +10,8 @@
 
 ### Bundle Adjustment
 
+* [Bundle Adjustment (BA) in vSLAM or SFM](https://cgabc.xyz/posts/8693e4e/)
+
 Sparse Hessian matrix
 
 <p align="center">
@@ -21,7 +23,7 @@ Sparse Hessian matrix
 
 ###  BAL Dataset
 
-* Bundle Adjustment in the Large
+* [Bundle Adjustment in the Large](https://grail.cs.washington.edu/projects/bal/)
 
 ###  g2o Dataset
 
