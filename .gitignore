@@ -8,3 +8,5 @@ cmake-build-debug/
 .tags
 
 .vscode/
+
+site/
