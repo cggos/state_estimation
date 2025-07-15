@@ -49,7 +49,7 @@ markdown_extensions:
       permalink: true # "#"
       toc_depth: 5
       separator: "_"
-      slugify: !!python/name:pymdownx.slugs.uslugify_cased
+      # slugify: !!python/name:pymdownx.slugs.uslugify_cased
   - codehilite:
       guess_lang: true
       linenums: true
@@ -73,8 +73,8 @@ markdown_extensions:
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
       # emoji_generator: !!python/name:pymdownx.emoji.to_png
   - pymdownx.tasklist:
       custom_checkbox: true
