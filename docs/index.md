@@ -1,43 +1,62 @@
-# State Estimation
+# Mathematics & Scientific Computing
 
-* https://cgabc.xyz/categories/State-Estimation/
+* Source Code: https://github.com/cggos/scikit
 
----
+* Blog (CGABC): https://cgabc.xyz/categories/Maths/
 
-## App
+------
 
-### Pose Graph Optimization
+## Overview
 
-### Bundle Adjustment
+* [Mathematics (Wikipedia)](https://en.wikipedia.org/wiki/Mathematics)
 
-* [Bundle Adjustment (BA) in vSLAM or SFM](https://cgabc.xyz/posts/8693e4e/)
+* [S.O.S. MATHematics](http://www.sosmath.com) is your free resource for math review material from Algebra to Differential Equations!
 
-Sparse Hessian matrix
+* [UbuntuScience](https://help.ubuntu.com/community/UbuntuScience)
+
+* Floating Point Math: https://0.30000000000000004.com/
 
 <p align="center">
-  <img src="img/mat_H.png" style="width:60%"/>
+  <img src="img/maths_map.png" style="width:80%;"/>
+</p>
+
+<p align="center">
+  <img src="img/maths_categories.jpg" style="width:80%;"/>
 </p>
 
 
-## Dataset
+## Maths Topics
 
-###  BAL Dataset
+<p align="center">
+  <img src="img/real_imaginary.jpeg" style="width:60%;"/>
+</p>
 
-* [Bundle Adjustment in the Large](https://grail.cs.washington.edu/projects/bal/)
+* Math Basics
+    * 偏导数、方向导数、梯度、微分
 
-###  g2o Dataset
+* Linear Algebra
+    * [Computational Linear Algebra course](https://www.fast.ai/2017/07/17/num-lin-alg/)
+    * [Numerical Recipes Home Page](http://numerical.recipes/)
 
-* [g2o format datasets – Luca Carlone](https://lucacarlone.mit.edu/datasets/)
+* Numerical Analysis
 
-* sphere.g2o
+*  Discrete Maths
+    * [hongshin/DiscreteMath](https://github.com/hongshin/DiscreteMath)
+
+* Geometry
+
+* Optimization
+    * [State Estimation (CGABC)](https://est.cgabc.xyz/)
+
+
+## Programming
+
+* [Mathematical software - swMATH](https://www.swmath.org/)
+* [Programs in Mathematics](https://www.mathprograms.org)
+* [Mathematical Programming Society](http://www.mathprog.org/)
+* [Math ∩ Programming](https://jeremykun.com/)
 
 
 ## Books
 
-* *Probability, Statistics and Random Processes*
-
-* *STATE ESTIMATION FOR ROBOTICS*
-
-* *Probabilistic Robotics*
-
-* *Factor Graphs for Robot Perception*
+* *[Introduction to Scientific Programming: Computational Problem Solving Using Maple and C](https://www.cs.utah.edu/~zachary/IntroSciProg.html)*

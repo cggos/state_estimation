@@ -1,0 +1,1 @@
+g++ qr_test.cpp -w -std=c++11 -I/usr/include/eigen3 -I/usr/include/suitesparse -lcholmod -lspqr -llapack -lblas

@@ -1,0 +1,13 @@
+<launch>
+
+  <arg name="rviz" default="true"/>
+
+  <node pkg="ros_tf" type="show_path" name="show_path" output="screen"/>
+
+  <group if="$(arg rviz)">
+    <node pkg="rviz" type="rviz" name="rviz" output="screen" 
+      args="-d $(find ros_tf)/rviz/show_path.rviz" required="true">
+    </node>
+  </group>  
+
+</launch>
