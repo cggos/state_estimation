@@ -1,10 +1,10 @@
-site_name: mkd
+site_name: mekd
 site_author: Gavin Gao
-site_url: https://mkd.cgabc.xyz/
-site_description: Maths, Kinematics and Dynamics Library
+site_url: https://mekd.cgabc.xyz/
+site_description: Maths, Estimation, Kinematics and Dynamics
 
-repo_url: https://github.com/cggos/mkd
-repo_name: cggos/mkd
+repo_url: https://github.com/cggos/mekd
+repo_name: cggos/mekd
 
 theme: 
   name: material # readthedocs material
@@ -92,30 +92,42 @@ extra:
 nav:
   - Home: index.md
 
-  - C++:
-    - Eigen: cpp/eigen.md
-    - Maths Libs: cpp/math_libs.md
+  - Maths:
+    - Overview: maths/README.md
 
-  - Python:
-    - Overview: python/README.md
-    - Anaconda: python/anaconda.md
-    - pip & Wheel: python/pip_whl.md
-    - Libs: python/py_libs.md
+    - C++:
+      - Eigen: maths/cpp/eigen.md
+      - Maths Libs: maths/cpp/math_libs.md
 
-  - Matlab:
-    - Overview: matlab/README.md
+    - Python:
+      - Overview: maths/python/README.md
+      - Anaconda: maths/python/anaconda.md
+      - pip & Wheel: maths/python/pip_whl.md
+      - Libs: maths/python/py_libs.md
 
-  - R: r/README.md
+    - Matlab:
+      - Overview: maths/matlab/README.md
 
-  - Wolfram:
-    - Overview: wolfram/README.md
-    - Wolfram Mathematica: wolfram/wolfram_mathematica.md
-  
-  - Math Typesetting:
-    - Overview: typesetting/README.md
-    - Conda: typesetting/conda.md
-    - Jupyter: typesetting/jupyter.md
-    - TeX: typesetting/TeX.md
-  
-  - Appendix:
-    - Overview: appendix/README.md
+    - R: maths/r/README.md
+
+    - Wolfram:
+      - Overview: maths/wolfram/README.md
+      - Wolfram Mathematica: maths/wolfram/wolfram_mathematica.md
+
+    - Math Typesetting:
+      - Overview: maths/typesetting/README.md
+      - Conda: maths/typesetting/conda.md
+      - Jupyter: maths/typesetting/jupyter.md
+      - TeX: maths/typesetting/TeX.md
+
+    - Appendix:
+      - Overview: maths/appendix/README.md
+
+  - Estimation:
+    - Overview: estimation/README.md
+    - Filter: estimation/filter/README.md
+    - MAP: estimation/map/README.md
+    - Solver: estimation/solvers/README.md
+
+  - Kinematics & Dynamics:
+    - Overview: kd/README.md
