@@ -95,30 +95,10 @@ nav:
   - Maths:
     - Overview: maths/README.md
 
-    - C++:
-      - Eigen: maths/cpp/eigen.md
-      - Maths Libs: maths/cpp/math_libs.md
+    - Maths Libs:
+      - Overview: maths/math_libs/README.md
+      - Eigen: maths/math_libs/eigen.md
 
-    - Python:
-      - Overview: maths/python/README.md
-      - Anaconda: maths/python/anaconda.md
-      - pip & Wheel: maths/python/pip_whl.md
-      - Libs: maths/python/py_libs.md
-
-    - Matlab:
-      - Overview: maths/matlab/README.md
-
-    - R: maths/r/README.md
-
-    - Wolfram:
-      - Overview: maths/wolfram/README.md
-      - Wolfram Mathematica: maths/wolfram/wolfram_mathematica.md
-
-    - Math Typesetting:
-      - Overview: maths/typesetting/README.md
-      - Conda: maths/typesetting/conda.md
-      - Jupyter: maths/typesetting/jupyter.md
-      - TeX: maths/typesetting/TeX.md
 
     - Appendix:
       - Overview: maths/appendix/README.md
