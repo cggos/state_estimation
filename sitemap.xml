@@ -2,90 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://mekd.cgabc.xyz/</loc>
-         <lastmod>2025-07-15</lastmod>
+         <lastmod>2025-08-06</lastmod>
     </url>
     <url>
          <loc>https://mekd.cgabc.xyz/estimation/</loc>
-         <lastmod>2025-07-15</lastmod>
+         <lastmod>2025-08-06</lastmod>
     </url>
     <url>
          <loc>https://mekd.cgabc.xyz/estimation/filter/</loc>
-         <lastmod>2025-07-15</lastmod>
+         <lastmod>2025-08-06</lastmod>
     </url>
     <url>
          <loc>https://mekd.cgabc.xyz/estimation/map/</loc>
-         <lastmod>2025-07-15</lastmod>
+         <lastmod>2025-08-06</lastmod>
     </url>
     <url>
          <loc>https://mekd.cgabc.xyz/estimation/solvers/</loc>
-         <lastmod>2025-07-15</lastmod>
+         <lastmod>2025-08-06</lastmod>
     </url>
     <url>
          <loc>https://mekd.cgabc.xyz/kd/</loc>
-         <lastmod>2025-07-15</lastmod>
+         <lastmod>2025-08-06</lastmod>
     </url>
     <url>
          <loc>https://mekd.cgabc.xyz/maths/</loc>
-         <lastmod>2025-07-15</lastmod>
+         <lastmod>2025-08-06</lastmod>
     </url>
     <url>
          <loc>https://mekd.cgabc.xyz/maths/appendix/</loc>
-         <lastmod>2025-07-15</lastmod>
+         <lastmod>2025-08-06</lastmod>
     </url>
     <url>
-         <loc>https://mekd.cgabc.xyz/maths/cpp/eigen/</loc>
-         <lastmod>2025-07-15</lastmod>
+         <loc>https://mekd.cgabc.xyz/maths/math_libs/</loc>
+         <lastmod>2025-08-06</lastmod>
     </url>
     <url>
-         <loc>https://mekd.cgabc.xyz/maths/cpp/math_libs/</loc>
-         <lastmod>2025-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://mekd.cgabc.xyz/maths/matlab/</loc>
-         <lastmod>2025-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://mekd.cgabc.xyz/maths/python/</loc>
-         <lastmod>2025-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://mekd.cgabc.xyz/maths/python/anaconda/</loc>
-         <lastmod>2025-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://mekd.cgabc.xyz/maths/python/pip_whl/</loc>
-         <lastmod>2025-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://mekd.cgabc.xyz/maths/python/py_libs/</loc>
-         <lastmod>2025-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://mekd.cgabc.xyz/maths/r/</loc>
-         <lastmod>2025-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://mekd.cgabc.xyz/maths/typesetting/</loc>
-         <lastmod>2025-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://mekd.cgabc.xyz/maths/typesetting/TeX/</loc>
-         <lastmod>2025-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://mekd.cgabc.xyz/maths/typesetting/conda/</loc>
-         <lastmod>2025-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://mekd.cgabc.xyz/maths/typesetting/jupyter/</loc>
-         <lastmod>2025-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://mekd.cgabc.xyz/maths/wolfram/</loc>
-         <lastmod>2025-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://mekd.cgabc.xyz/maths/wolfram/wolfram_mathematica/</loc>
-         <lastmod>2025-07-15</lastmod>
+         <loc>https://mekd.cgabc.xyz/maths/math_libs/eigen/</loc>
+         <lastmod>2025-08-06</lastmod>
     </url>
 </urlset>
